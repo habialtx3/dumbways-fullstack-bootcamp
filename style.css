@@ -60,7 +60,6 @@ a {
     align-items: center;
     justify-content: center;
     transition: 0.3s;
-
 }
 
 .icon img {
@@ -117,7 +116,7 @@ a {
 }
 
 .cardPertama {
-    width: 50%;
+    width: 80%;
     background-color: white;
     display: flex;
     align-items: center;
