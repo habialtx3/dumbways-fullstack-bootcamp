@@ -2,60 +2,103 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-color: beige; ">
-    <div class="cardPertama">
-        <!-- card -->
-        <div class="main">
-            <div>
-                <h2>Hi welcome to my hut</h2>
-                <p>Halo nama saya <span style="font-weight: bold;">Muhammad Reza Pahlevi</span>. Saya berasal
-                    dari
-                    Batam
-                    Kepulauan Riau Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci provident animi
-                    accusamus
-                    blanditiis, recusandae magni architecto molestiae praesentium esse, a ab nisi aliquam
-                    consectetur soluta error fugit voluptatibus. Modi, corporis.</p>
-                <button class="btn">Say Hi</button>
-                <div class="cv">
-                    <a href="" style="text-decoration: none;">  Unduh CV </a>
-                    <img src="assets/download.svg" alt="">
-                </div>
-                <div class="social">
-                    <a href="https://www.facebook.com/">
-                        <div class="icon">
-                            <img src="/assets/facebook.svg">
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com/">
-                        <div class="icon">
-                            <img src="/assets/instagram.svg">
-                        </div>
-                    </a>
-                    <a href="https://www.twitter.com/">
-                        <div class="icon">
-                            <img src="/assets/twitter.svg">
-                        </div>
-                    </a>
-                    <a href="https://www.linkedin.com/">
-                        <div class="icon">
-                            <img src="/assets/linkedin.svg">
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/coba.jpg" alt="gambar saya">
-                <p>Photo Saya</p>
-            </div>
+<body class="bg-body-tertiary d-flex flex-column">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container gap-5">
+        <a class="navbar-brand" href="#">
+            <img src="/assets/dumbways.png" alt="logo dumbways" style="height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav gap-3">
+                <li class="nav-item">
+                    <a class="nav-link fw-bold active" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">MY PROJECT</a>
+                </li>
+            </ul>
+
+            <a class="btn btn-dark rounded-4 ms-auto" href="contact.html">CONTACT ME</a>
         </div>
     </div>
+</nav>
+
+    <main class="d-flex justify-content-center align-items-center m-5">
+        <div class="container bg-white rounded-4 p-5 shadow-lg">
+            <div class="container row">
+                <div class="col-7 d-flex flex-column gap-1">
+                    <h1 class="text-uppercase">Hi welcome to my hut</h1>
+                    <p>Halo nama saya <span class="fw-bold">Muhammad Reza Pahlevi</span>. Saya berasal
+                        dari
+                        Batam
+                        Kepulauan Riau Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quae quibusdam qui
+                        sunt accusantium facere deleniti animi excepturi, illo dolorem laborum officiis, corrupti vero
+                        reprehenderit, laudantium exercitationem eos expedita dolor aperiam modi! Facilis ad omnis
+                        quaerat consectetur at architecto, quos dolore assumenda accusantium! Reiciendis eaque ipsa est
+                        repudiandae ab doloremque.
+                    </p>
+                    <div class="d-flex gap-5">
+                        <a href="contact-me.html" class="btn btn-dark rounded-5 d-flex">Contact</a>
+                        <div>
+                            <a href="" class="btn bg-dark-hover">
+                                <span>
+                                    <i class="bi bi-download"></i>
+                                </span>
+                                Download CV
+                            </a>
+                        </div>
+                    </div>
+                    <div class="d-flex py-3 gap-4">
+                        <a href="" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 40px;height: 40px;">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 40px;height: 40px;">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 40px;height: 40px;">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 40px;height: 40px;">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-center justify-content-center">
+                    <div class="card shadow-sm" style="width: 80%">
+                        <img src="assets/coba.jpg" class="card-img-top object-fit-cover" style="height: 300px;" alt="">
+                        <div class="card-body">
+                            <h5 class="text-center">Foto Saya</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
