@@ -45,8 +45,8 @@ function createCard(projects) {
             <p class="text-muted">${project.start_date} to ${project.end_date} </p>
             <p class="fw-bold">${project.technologies}</p>
             <div class="d-flex gap-3 mb-3 align-content-center justify-content-center">
-            <button class="btn btn-dark" onclick="editProject('${project.id}')">Edit</button>
-                        <button class="btn btn-dark" onclick="deleteProject('${project.id}')">Delete</button>
+            <a class="btn btn-dark" onclick="editProject('${project.id}')">Edit</a>
+                        <a class="btn btn-dark" onclick="deleteProject('${project.id}')">Delete</a>
             </div>
             </div>
             </div>
@@ -63,7 +63,6 @@ function createCard(projects) {
 function goToDetailPage(id) {
     window.location.href = `detail.html?id=${id}`
 }
-
 
 form.addEventListener('submit', async function (e) {
     e.preventDefault()
