@@ -1,8 +1,6 @@
 const urlParameter = new URLSearchParams(window.location.search);
 const projectId = urlParameter.get('id')
 
-document.titl
-
 const project_name = document.getElementById('project_name')
 const description = document.getElementById('project_description')
 const date = document.getElementById('project_date')
