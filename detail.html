@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-body-tertiary d-flex flex-column">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <div class="container gap-5">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/dumbways.png" alt="logo dumbways" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold active" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="project.html">MY PROJECT</a>
+                    </li>
+                </ul>
+
+                <a class="btn btn-dark rounded-4 ms-auto" href="contact.html">CONTACT ME</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="d-flex justify-content-center align-items-center m-5">
+        <div class="container bg-white rounded-4 p-5 shadow-lg">
+            <div class="container row">
+                <div class="col-7 d-flex flex-column gap-1">
+                    <h1 class="text-uppercase" id="project_name">Hi welcome to my hut</h1>
+                    <div class="" id="project_date">
+                    </div>
+                    <div class="d-flex gap-3 mb-3" id="project_technology">
+                    </div>
+                    <p id="project_description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente,
+                        necessitatibus.</p>
+                </div>
+                <div class="col d-flex align-items-center justify-content-center">
+                    <div class="card shadow-sm" style="width: 80%">
+                        <img src="assets/coba.jpg" class="card-img-top object-fit-cover" id="project_image"
+                            style="height: 300px;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+<script src="scripts/detail.js"></script>
+
+</html>
