@@ -1,7 +1,67 @@
 const form = document.getElementById('projectForm')
 const fileInput = document.getElementById('file_input')
 let id = 0;
-form.addEventListener('submit', function (e) {
+
+let projects = JSON.parse(localStorage.getItem("projects")) || [];
+createCard(projects);
+
+function deleteProject(id) {
+    console.log(`menghapus ${id}`)
+}
+
+function editProject(id) {
+    console.log(`mengedit ${id}`)
+}
+
+function fileBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file); // hasilnya base64
+    });
+}
+
+
+function createCard(projects) {
+    const cardList = document.getElementById('cardList')
+    cardList.innerHTML = "";
+
+    projects.map(project => {
+        let imgUrl = "https://via.placeholder.com/300x200?text=No+Image"
+        if (project.file) {
+            imgUrl = project.file
+        }
+
+        const containerCard = document.createElement('div')
+        containerCard.classList.add('col-md-4', 'mb-4')
+
+        containerCard.innerHTML = `
+            <div class="card">
+            <img src="${imgUrl}" class="card-img">
+            <div class="card-body">
+            <h5 class="card-title">${project.name}</h5>
+            <p class="card-text">${project.description}</p>
+            <p class="text-muted">${project.start_date} to ${project.end_date} </p>
+            <p class="fw-bold">${project.technologies}</p>
+            <div class="d-flex gap-3 mb-3 align-content-center justify-content-center">
+            <button class="btn btn-dark" onclick="editProject(${project.id})">Edit</button>
+                        <button class="btn btn-dark" onclick="deleteProject(${project.id})">Delete</button>
+            </div>
+            </div>
+            </div>
+            `
+
+        cardList.appendChild(containerCard)
+        id++
+
+        form.reset()
+
+    })
+
+}
+
+form.addEventListener('submit', async function (e) {
     e.preventDefault()
 
 
@@ -17,52 +77,26 @@ form.addEventListener('submit', function (e) {
             technologies.push(item.value)
         })
 
-    console.log("Name : ", project_name)
-    console.log("Start Date : ", start_date)
-    console.log("End Date : ", end_date)
-    console.log("Description : ", description)
-    console.log("Technologies : ", technologies)
-    console.log("File : ", file)
-
-    const cardList = document.getElementById('cardList')
-
-    const containerCard = document.createElement('div')
-    containerCard.classList.add('col-md-4', 'mb-4');
-
-    const card = document.createElement('div')
-    card.classList.add('card')
-
-    let dummyUrl = "https://via.placeholder.com/300x200?text=No+Image"
-    if (file) {
-        dummyUrl = URL.createObjectURL(file)
+    let fileBase64String = null;
+    if(file){
+        fileBase64String = await fileBase64(file)
+    }
+    const project = {
+        id: id,
+        name: project_name,
+        start_date: start_date,
+        end_date: end_date,
+        description: description,
+        technologies: technologies,
+        file: fileBase64String
     }
 
-    const img = document.createElement('img')
-    img.src = dummyUrl
-    img.classList.add('card-img-top')
+    // console.log(project)
+    projects.push(project)
+    localStorage.setItem('projects', JSON.stringify(projects))
+    // console.log(projects)
 
-    const cardBody = document.createElement('div')
-    cardBody.classList.add('card-body')
-
-    cardBody.innerHTML =
-        `
-        <h5 class="card-title">${project_name}</h5>
-        <p class="card-text">${description}</p>
-        <p class="text-muted">from ${start_date} to ${end_date}</p>
-        <p class="fw-bold">Technologies : ${technologies}</p>
-        <div class="d-flex gap-5 align-content-center justify-content-center">
-        <a href="item/edit/${id}" class="btn btn-dark">Edit</a>
-        <a href="item/delete/${id}" class="btn btn-dark">Delete</a>
-
-        </div>
-        `
-
-
-    card.appendChild(img)
-    card.appendChild(cardBody)
-    containerCard.appendChild(card)
-    cardList.appendChild(containerCard)
-
-    form.reset()
-    id++;
+    createCard(projects)
 })
+
+
