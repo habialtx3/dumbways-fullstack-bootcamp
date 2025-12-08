@@ -6,8 +6,14 @@ createCard(projects);
 
 console.log(projects)
 
-function deleteProject(id) {
-    console.log(`menghapus ${id}`)
+function deleteProject(id, event) {
+    event.stopPropagation()
+
+    newproject = projects.filter(project => project.id !== id)
+    localStorage.setItem('projects', JSON.stringify(newproject))
+
+    createCard(newproject)
+    alert('Item telah dihapus')
 }
 
 function editProject(id) {
@@ -46,7 +52,7 @@ function createCard(projects) {
             <p class="fw-bold">${project.technologies}</p>
             <div class="d-flex gap-3 mb-3 align-content-center justify-content-center">
             <a class="btn btn-dark" onclick="editProject('${project.id}')">Edit</a>
-                        <a class="btn btn-dark" onclick="deleteProject('${project.id}')">Delete</a>
+                        <a class="btn btn-dark" onclick="deleteProject('${project.id}',event)">Delete</a>
             </div>
             </div>
             </div>
