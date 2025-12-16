@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/habialtx3/dumbways-fullstack-bootcamp#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "ejs": "^3.1.10",
     "express": "^5.2.1",
+    "express-session": "^1.18.2",
     "pg": "^8.16.3"
   }
 }

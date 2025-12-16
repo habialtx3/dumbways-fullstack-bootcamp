@@ -29,7 +29,19 @@
         </li>
       </ul>
 
-      <a class="btn btn-dark rounded-4 ms-auto" href="/contact">CONTACT ME</a>
+      <div class="d-flex ms-auto gap-2 align-items-center">
+        <% if (user) { %>
+        <span class="fw-semibold"> Hi, <%= user.username %> </span>
+
+        <a class="btn btn-danger rounded-4" href="/logout"> Logout </a>
+
+        <% } else { %>
+        <a class="btn btn-dark rounded-4" href="/contact"> Contact Me </a>
+
+        <a class="btn btn-warning rounded-4" href="/login"> Login </a>
+        <% } %>
+      </div>
+      
     </div>
   </div>
 </nav>
