@@ -19,7 +19,7 @@ router.get("/project", async (req, res) => {
 
 });
 
-router.post("/project", async (req, res) => {
+router.post("/project",upload.single("image"), async (req, res) => {
     const {
         name,
         start_date,
