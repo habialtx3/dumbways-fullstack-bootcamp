@@ -20,6 +20,7 @@
         <div class="w-75 d-flex gap-1 flex-column mt-3">
             <form id="projectForm" 
             action="/project"
+            enctype="multipart/form-data"
             method="POST"
             >
                 <div class="mb-3">
@@ -74,10 +75,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="input-group mb-4">
-                    <input type="file" class="form-control" id="file_input" name="image" aria-describedby="inputGroupFileAddon04"
-                        aria-label="Upload">
-                </div> -->
+                <div class="input-group mb-4">
+                    <input type="file" class="form-control" id="image_input" 
+                    accept="image/png, image/jpeg,image/jpg"
+                    name="image" aria-label="Upload" >
+                </div>
                 <div class="d-flex align-content-end justify-content-end">
                     <button class="btn btn-dark" type="submit" id="submitBtn">Submit</button>
                 </div>
@@ -105,7 +107,7 @@
       <div class="col-md-4">
         <div class="card shadow-sm h-100">
           <img 
-  src="/uploads/proyek_default.png"
+  src="${p.image ? p.image : '/uploads/proyek_default.png'}"
   class="card-img-top"
 />
           <div class="card-body">

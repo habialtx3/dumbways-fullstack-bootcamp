@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../config/db.js');
 const pool = require("../config/db.js");
 const bcrypt = require('bcrypt')
+const upload = require('../middlewares/upload.js')
 
 router.get("/", (req, res) => {
     res.render("index");
@@ -25,10 +26,10 @@ router.post("/project", async (req, res) => {
         end_date,
         description,
         technologies,
-        image
     } = req.body
 
     const techString = Array.isArray(technologies) ? technologies.join(", ") : technologies || "";
+    const image = req.file ? `/uploads/${req.file.filename}` : null;
 
     await pool.query(
         `INSERT INTO projects
